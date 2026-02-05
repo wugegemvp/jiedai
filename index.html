@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>案件详情</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="color-scheme" content="light">
+    
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFMElEQVR4nO2aW2wUVRzGf2d2t7Tb0ouU3iyltBUKKIgKRolRIxqj0UQTH4wPBkM00YgvGg0PGo0PfFKMV4wP4oOJCgqR8iIxAoK0lMulLVCgtJTSbu9z/IdtZ2ZnZ3a72532hP/NZnZmz5z5zbd/5zIGwzAMwzAMwzAMY1hCqA7o7+9/0jCM5416vdkwjK2u62406vU6o76+3qivr/+21vP09fWtcl33Ldd1O416fa1RrzcY9Xp9rVFf31irOYYEwLbt1a7rvuO67nKjXl9l1OsNRn19vVFfX7ek8wwJgG3b61zXfcd13aVGvb7aqNcbjPr6eqO+vu6czjEkALZtP+C67o9Gvb7KqNcbjPr6eqO+vv6szjEkALZtP+667o9Gvb7aqNcbjPr6eqO+vv6MzjEkALZtr3dd913XdZcb9fpqo15vMOrr6436+rqzOseQANi2/aTruj8a9fpqo15vMOrr6436+vqzOseQANi2vdF13V+Men2VUa83GPX19UZ9ff1ZnWNIALq6utY4jvOH4zjLjXq9wai/v9+or683GhoaTuk8QwJgGMa68vLyP4x6vcGor6836u3tNerq6k7rHEMCYBjGcyUlJb8b9XqDUW9vr1F3d7dRX19/SucZEgDDMJ4vKSl516jXG4x6e3uNent7jfr6+lM6z5AAuK67uaSk5E2jXm8w6u3tNerr6zXq6+tP6TxDAuC67p6SkhIAgFFvb69Rb2+v0djYeErnGRIA13X3lJaWvmrU6w1Gvb29Rn19vUZjY+MpnWdIAFzXPVhaWvqKUa83GPX29hr19fUaDQ0Np3SeIQFwXfdQaWnpS0a93mDU29tr1NfXZzQ0NJzSeYYEwHXdw6WlpS8Y9XqDUW9vr1FfX6/R0NBwSucZEgDXdQ+XlZW9YNTrDUZ9fX1GfX29RmNj4ymdZ0gA+vv7XywtLX3eqNcbrK+v16ivr9doaGg4pfMMCUBfX9/L5eXlLxj1eoN1dXUa9fX1Gg0NDad0niEB6Ovr21BWVva8Ua83WF9fr1FfX6/R2Nh4SucZEgDbtl8pKyvbaNTrDdbV1WnU19drNDQ0nNJ5hgTAtu3Xy8rKnjPq9Qbr6uo06uvrNRobG0/pPEMCYNv2G2VlZS8Y9XqD9fX1GvX19RqNjY2ndJ4hAbBt+82ysrIXjHq9wbq6Oo36+nqNhoaGUzrPkADYtv1WWVnZC0a93mBdXZ1GfX29RmNj4ymdZ0gAnD179u2ysrIXjHq9wbq6Oo36+nqNhoaGUzrPkAD09va+U1ZW9oJRrzdYV1enUV9fr9HY2HhK5xkSANu23y0rK3vBqNcbrKur06ivr9doaGg4pfMMCUD3/wD+Q9TrDdbV1WnU19drNDY2ntJ5hgTAtu3Py8rKnjfq9Qbr6uo06uvrNRsaGk7pPEMC4DjOF2VlZS8Y9XqD9fX1GvX19RqNjY2ndJ4hAfB9/4uysrIXjHq9wbq6Oo36+nqNhoaGUzrPkAA4jvNlWVnZC0a93mBdXZ1GfX29RmNj4ymdZ0gAHMf5qqys7AWjXm+wrq5Oo76+XqOhoeGUzjMkAI7jfF1WVvaCUa83WFdXp1FfX6/R2Nh4SucZEgDHcb4pKyt7wajXG6yrq9Oor6/XaGhoOKXzDAmA4zhfl5WVvWDU6w3W1dVp1NfXazQ2Np7SeYYEwHGcb8rKyl4w6vUG6+rqNOrr6zUaGhpO6TxDAuA4zrdlZWUvGPV6g3V1dRr19fUaDQ0Np3SeIQFwHOfbsrKyF4x6vcG6ujqN+vp6jcbGxlM6z5AAOI7znV27dr1g1OsN1tXVadTX12s0NDSc0nmGBOC/jGEYhmEYhmEYhmF8T/EH8u+C1iQJ2OAAAAAASUVORK5CYII=">
+
+    <style>
+        :root {
+            --primary: #007AFF;
+            --danger: #FF3B30;
+            --warning: #FF9500;
+            --dark: #1C1C1E;
+            --bg: #F2F2F7;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; outline: none; user-select: none; }
+        
+        body {
+            background: #000;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', sans-serif;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            /* 强制浅色模式 */
+            color-scheme: light;
+        }
+
+        .app-shell {
+            width: 100%;
+            max-width: 420px;
+            background: var(--bg);
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* 导航栏适配刘海屏 */
+        .navbar {
+            height: 44px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: center;
+            position: relative; border-bottom: 1px solid rgba(0,0,0,0.1); flex-shrink: 0; z-index: 2001; 
+            /* 🔥 核心：适配刘海屏 */
+            padding-top: env(safe-area-inset-top);
+            height: calc(44px + env(safe-area-inset-top));
+        }
+        
+        /* 标题位置修正 */
+        .nav-title { font-weight: 600; font-size: 17px; max-width: 50%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; margin-top: env(safe-area-inset-top); }
+        .nav-btn { position: absolute; padding: 0 16px; height: 44px; bottom: 0; display: flex; align-items: center; cursor: pointer; color: #333; }
+        
+        /* 保存按钮适配 */
+        .nav-save-btn {
+            display: none;
+            margin-left: 10px;
+            padding: 4px 12px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: env(safe-area-inset-top); /* 适配刘海 */
+        }
+
+        .nav-right { right: 0; font-size: 20px; font-weight: bold; letter-spacing: 2px;}
+        .nav-left { left: 0; font-size: 20px; }
+
+        /* 状态条 */
+        .status-bar {
+            background: #FFF1F0; color: var(--danger); 
+            font-size: 12px; padding: 10px; text-align: center; 
+            position: sticky; top: 0; z-index: 50; line-height: 1.4;
+            transition: all 0.3s;
+        }
+
+        /* 内容区域 */
+        .content {
+            flex: 1; overflow-y: auto; padding: 12px; padding-bottom: 120px; position: relative; z-index: 20; 
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* 头部警告卡片 */
+        .warning-card {
+            background: linear-gradient(135deg, #FF4D4F 0%, #F5222D 100%);
+            color: white; padding: 24px 20px; border-radius: 12px; margin-bottom: 16px;
+            box-shadow: 0 8px 20px rgba(245, 34, 45, 0.25); position: relative; overflow: hidden;
+            transition: background 0.5s;
+        }
+        
+        .live-indicator {
+            display: inline-block; width: 8px; height: 8px; background: #fff; border-radius: 50%;
+            margin-left: 6px; position: relative; top: -2px;
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            animation: pulse-white 2s infinite;
+        }
+        @keyframes pulse-white {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .warning-title { display: flex; align-items: center; font-size: 15px; opacity: 0.9; }
+
+        .warning-amount { 
+            font-size: 40px; font-weight: 700; font-family: 'DIN Alternate', sans-serif; 
+            margin: 10px 0; letter-spacing: 0.5px; position: relative; z-index: 2; cursor: pointer;
+        }
+        
+        .warning-tag-row { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; flex-wrap: wrap;}
+        .warning-tag {
+            background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 4px; font-size: 12px; white-space: nowrap;
+        }
+        
+        .seal-box {
+            position: absolute; right: -15px; bottom: -20px; width: 150px; height: 150px;
+            border: 4px solid rgba(255,255,255,0.3); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transform: rotate(-25deg); pointer-events: none; z-index: 1;
+        }
+        .seal-inner-circle {
+            width: 90%; height: 90%; border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.3); font-weight: bold; font-size: 20px;
+        }
+        
+        .update-time { font-size: 11px; opacity: 0.8; margin-top: 10px; font-family: 'DIN Alternate'; }
+
+        /* 列表样式 */
+        .section {
+            background: #fff; border-radius: 10px; padding: 0 16px; margin-bottom: 12px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+        .row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 0; border-bottom: 1px solid #F5F5F5; font-size: 15px;
+        }
+        .row:last-child { border-bottom: none; }
+        .label { color: #888; }
+        .val { color: #333; font-weight: 500; text-align: right; }
+        .val.red { color: var(--danger); cursor: pointer; }
+        .val.can-copy:active { opacity: 0.5; }
+        
+        .money-font { font-family: 'DIN Alternate', sans-serif; font-weight: 600; font-size: 17px;}
+        .currency-symbol { font-size: 0.7em; margin-right: 1px; font-weight: normal; }
+
+        /* === 进度轴样式 === */
+        .timeline-box { padding-top: 20px; padding-bottom: 10px; }
+        .timeline-title { font-size: 14px; color: #666; margin-bottom: 16px; font-weight: 600; }
+        .timeline-item { position: relative; padding-left: 24px; padding-bottom: 28px; border-left: 2px solid #E5E5EA; margin-left: 6px; }
+        .timeline-item:last-child { border-left: 2px solid transparent; padding-bottom: 0; }
+        .timeline-dot {
+            position: absolute; left: -6px; top: 0; width: 10px; height: 10px;
+            border-radius: 50%; background: #ddd; border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #ddd; transition: all 0.3s;
+        }
+        .timeline-item.active .timeline-dot {
+            background: var(--danger); box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.2);
+        }
+        .timeline-date { font-size: 12px; color: #999; margin-bottom: 4px; font-family: 'DIN Alternate';}
+        .timeline-content { font-size: 14px; color: #999; font-weight: 500; margin-bottom: 2px;}
+        .timeline-item.active .timeline-content { color: #333; font-weight: 600; }
+        .timeline-desc { font-size: 12px; color: #888; line-height: 1.4; }
+
+        /* 底部栏 */
+        .bottom-bar {
+            position: absolute; bottom: 0; width: 100%;
+            background: #fff; border-top: 1px solid #eee;
+            padding: 12px 16px 34px; display: flex; justify-content: space-between; align-items: center;
+            z-index: 600; box-shadow: 0 -2px 10px rgba(0,0,0,0.03);
+            /* 适配底部小黑条 */
+            padding-bottom: max(34px, env(safe-area-inset-bottom));
+        }
+        .total-num { font-size: 20px; color: var(--danger); font-weight: bold; font-family: 'DIN Alternate', sans-serif;}
+        .btn-group { display: flex; gap: 12px; }
+        .btn-base { border-radius: 20px; font-size: 15px; font-weight: 600; padding: 10px 20px; border: none; cursor: pointer;}
+        .btn-repay { background: var(--primary); color: #fff; box-shadow: 0 4px 10px rgba(24, 144, 255, 0.3); }
+        .btn-installment { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+
+        /* === 悬浮客服 === */
+        .floating-cs {
+            position: absolute; bottom: 100px; right: 16px;
+            width: 48px; height: 48px; background: #fff; border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 500;
+            display: flex; align-items: center; justify-content: center; font-size: 24px;
+            border: 1px solid #eee; cursor: pointer;
+            margin-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* === 菜单 & 弹窗通用 === */
+        .menu-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 2000; display: none; }
+        .dropdown-menu {
+            position: absolute; top: 60px; right: 12px; margin-top: env(safe-area-inset-top);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            width: 170px; display: none; flex-direction: column; z-index: 2005; padding: 6px 0;
+        }
+        .dropdown-menu.show { display: flex; }
+        .menu-item { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; cursor: pointer; font-size: 15px; color: #333; }
+
+        body.editing-active .can-edit {
+            border: 2px solid #34C759 !important; background: rgba(52, 199, 89, 0.1) !important;
+            border-radius: 6px; padding: 2px 6px; margin: -2px -6px;
+            position: relative; z-index: 999 !important; cursor: pointer;
+        }
+
+        /* 输入框 */
+        .custom-input-modal {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+            z-index: 10000; display: none; align-items: center; justify-content: center;
+        }
+        .input-box {
+            background: #fff; width: 85%; max-width: 320px; padding: 24px;
+            border-radius: 16px; display: flex; flex-direction: column; gap: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-height: 80vh;
+        }
+        .input-box h3 { text-align: center; font-size: 17px; font-weight: 600; margin: 0; }
+        .input-box input {
+            padding: 12px; font-size: 18px; border: 1px solid #ddd; border-radius: 8px;
+            width: 100%; text-align: center; background: #F9F9F9;
+        }
+        
+        .mask-options-container { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 4px; }
+        .mask-chip {
+            font-size: 13px; padding: 6px 12px; border-radius: 16px;
+            background: #F0F2F5; color: #666; cursor: pointer; border: 1px solid transparent; transition: all 0.2s;
+        }
+        .mask-chip.active { background: var(--primary); color: #fff; box-shadow: 0 2px 5px rgba(0,122,255,0.3); }
+
+        .app-name-list {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+            max-height: 250px; overflow-y: auto; padding: 4px;
+            border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin: -10px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        .app-name-item {
+            font-size: 13px; padding: 10px 4px; border-radius: 8px;
+            background: #f5f5f7; color: #333; text-align: center;
+            cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            border: 1px solid transparent;
+        }
+        .app-name-item.selected { background: var(--primary); color: #fff; }
+
+        .input-btn-row { display: flex; gap: 12px; margin-top: 4px;}
+        .input-btn { flex: 1; padding: 12px 0; border-radius: 10px; border: none; font-weight: 600; font-size: 16px; cursor: pointer; }
+        .btn-cancel { background: #F2F2F7; color: #888; }
+        .btn-confirm { background: var(--primary); color: #fff; }
+
+        /* 利率Sheet */
+        .action-sheet-mask {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4); z-index: 11000; display: none; justify-content: center; align-items: flex-end;
+        }
+        .action-sheet { width: 100%; max-width: 420px; padding: 10px; padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+        .sheet-group { background: rgba(255,255,255,0.95); border-radius: 14px; overflow: hidden; margin-bottom: 8px; }
+        .sheet-header { padding: 14px; text-align: center; font-size: 13px; color: #888; border-bottom: 1px solid #eee; }
+        .sheet-btn { width: 100%; padding: 18px 0; background: transparent; border: none; border-bottom: 1px solid #eee; font-size: 17px; color: var(--primary); }
+        .sheet-btn:last-child { border-bottom: none; }
+        .sheet-cancel { width: 100%; padding: 18px 0; background: #fff; border-radius: 14px; border: none; font-size: 17px; font-weight: 600; color: var(--primary); }
+
+        /* 开屏警告弹窗 */
+        .alert-modal-mask {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+            z-index: 12000; display: none; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .alert-modal-mask.visible { opacity: 1; }
+        .alert-card {
+            width: 80%; max-width: 320px; background: #fff; border-radius: 16px; overflow: hidden;
+            transform: scale(0.9); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .alert-modal-mask.visible .alert-card { transform: scale(1); }
+        .alert-header { background: #FF3B30; color: white; padding: 16px; text-align: center; font-weight: 600; font-size: 16px; }
+        .alert-body { padding: 24px; text-align: center; font-size: 15px; color: #333; line-height: 1.5; }
+        .alert-btn { 
+            border-top: 1px solid #eee; padding: 14px; text-align: center; 
+            color: #FF3B30; font-weight: 600; font-size: 16px; cursor: pointer;
+        }
+        .alert-btn:active { background: #f5f5f5; }
+
+        /* Toast 提示 */
+        .toast {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8); color: white; padding: 12px 24px; border-radius: 8px;
+            font-size: 14px; z-index: 13000; opacity: 0; transition: opacity 0.3s; pointer-events: none;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .toast.show { opacity: 1; }
+
+    </style>
+</head>
+<body id="mainBody">
+
+<div class="app-shell">
+    <div class="navbar">
+        <div class="nav-btn nav-left">✕</div>
+        <div class="nav-title can-edit" data-model="appName">借贷详情</div>
+        <div class="nav-save-btn" id="saveBtn" onclick="finishEditing()">保存</div>
+        <div class="nav-btn nav-right" onclick="toggleMenu()">•••</div>
+        
+        <div class="dropdown-menu" id="popupMenu">
+            <div class="menu-item" onclick="toggleEditMode()">📝 切换编辑模式</div>
+            <div class="menu-item" onclick="openInterestModal()">⚙️ 设置利率方案</div>
+            <div class="menu-item" onclick="resetData()">🔄 重置所有数据</div>
+        </div>
+    </div>
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+    <div class="status-bar can-edit" data-model="statusText" id="statusDisplay">
+        【严重警告】您的逾期案件已移交第三方法务机构，即将启动司法程序。
+    </div>
+
+    <div class="content">
+        <div class="warning-card" id="headerCard">
+            <div class="seal-box"><div class="seal-inner-circle">法务合规</div></div>
+            <div class="warning-title">
+                当前逾期欠款 <span class="live-indicator"></span>
+            </div>
+            
+            <div class="warning-amount can-copy" id="totalDisplay" onclick="copyText(this)">0.00</div>
+            
+            <div class="warning-tag-row">
+                <div class="warning-tag can-edit" data-model="days" id="daysDisplay">逾期 19 天</div>
+                <div class="warning-tag" id="dueDateDisplay">应还日: --</div>
+            </div>
+            
+            <div class="update-time" id="timeDisplay">数据更新于：--:--:--</div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <span class="label">借款人</span>
+                <span class="val can-edit can-copy" data-model="name" onclick="copyText(this)">Kiro</span>
+            </div>
+            <div class="row">
+                <span class="label">证件号码</span>
+                <span class="val can-edit can-copy" data-model="idcard" onclick="copyText(this)">34**************1X</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <span class="label">本金</span>
+                <span class="val money-font can-edit can-copy" data-model="principal" id="principalDisplay" onclick="copyText(this)"></span>
+            </div>
+            <div class="row">
+                <span class="label">计算公式</span>
+                <span class="val" id="rateDisplay">按借款协议约定执行</span>
+            </div>
+            <div class="row">
+                <span class="label">违约金/罚息 (自动计算)</span>
+                <span class="val red money-font can-copy" id="interestDisplay" onclick="copyText(this)"></span>
+            </div>
+            <div class="row">
+                <span class="label">催收服务费</span>
+                <span class="val red money-font can-edit can-copy" data-model="fee" id="feeDisplay" onclick="copyText(this)"></span>
+            </div>
+        </div>
+
+        <div class="section timeline-box">
+            <div class="timeline-title">案件处理进度</div>
+            <div id="timelineContainer"></div>
+        </div>
+    </div>
+
+    <div class="floating-cs" onclick="alert('当前排队人数 99+，请稍后重试。')">🎧</div>
+
+    <div class="bottom-bar">
+        <div>
+            <div class="total-text" style="font-size:12px; color:#888">合计应还</div>
+            <span class="total-num" id="bottomMoney">¥0.00</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn-base btn-installment" onclick="fakeAction()">分期还款</button>
+            <button class="btn-base btn-repay" onclick="fakeAction()">立即还款</button>
+        </div>
+    </div>
+</div>
+
+<div class="alert-modal-mask" id="startAlert">
+    <div class="alert-card">
+        <div class="alert-header">⚠️ 严正警告</div>
+        <div class="alert-body">
+            您的账户已严重逾期，案件已进入法务审核阶段。<br><br>
+            请务必在 <strong>今日 18:00 前</strong> 完成全额还款，否则我们将启动失信惩戒程序并联系您的紧急联系人。
+        </div>
+        <div class="alert-btn" onclick="closeStartAlert()">我知道了</div>
+    </div>
+</div>
+
+<div class="toast" id="toast">✅ 已复制到剪贴板</div>
+
+<div class="custom-input-modal" id="inputModal">
+    <div class="input-box">
+        <h3 id="modalTitle">修改内容</h3>
+        <input type="text" id="modalInput" autocomplete="off">
+        <div class="mask-options-container" id="maskOptions" style="display:none"></div>
+        <div class="app-name-list" id="appNameOptions" style="display:none"></div>
+        <div class="input-btn-row">
+            <button class="input-btn btn-cancel" onclick="closeInputModal()">取消</button>
+            <button class="input-btn btn-confirm" onclick="saveInput()">确定</button>
+        </div>
+    </div>
+</div>
+
+<div class="action-sheet-mask" id="rateModal" onclick="closeRateModal()">
+    <div class="action-sheet" onclick="event.stopPropagation()">
+        <div class="sheet-group">
+            <div class="sheet-header">配置罚息算法模型 (切换到高炮模式)</div>
+            <button class="sheet-btn" onclick="setRate(0.0005)">🙂 正常 (日息 0.05%)</button>
+            <button class="sheet-btn" onclick="setRate(0.001)">😰 信用卡 (日息 0.1%)</button>
+            <button class="sheet-btn" onclick="setRate(0.01)">😱 714高炮 (日息 1%)</button>
+            <button class="sheet-btn" style="color:#FF3B30; font-weight:bold" onclick="setRate(0.02)">☠️ 这种必死 (日息 2%)</button>
+        </div>
+        <button class="sheet-cancel" onclick="closeRateModal()">取消</button>
+    </div>
+</div>
+
+<script>
+    // ==========================================
+    // 🔥 高利贷精算引擎 V11.0 (部署终极版)
+    // ==========================================
+    
+    // 50个预设平台名称库
+    const APP_NAMES = [
+        "借贷详情", "微粒贷", "蚂蚁借呗", "京东金条", "度小满金融",
+        "360借条", "拍拍贷", "分期乐", "马上消费", "招联金融",
+        "中银消费", "兴业消费", "平安普惠", "宜人贷", "人人贷",
+        "积木盒子", "陆金所", "众安贷", "滴滴水滴", "美团借钱",
+        "携程金融", "唯品花", "苏宁任性付", "小米贷款", "51人品贷",
+        "豆豆钱", "极速钱包", "现金巴士", "闪电借款", "信用钱包",
+        "借钱快", "给你花", "马上贷", "随手记", "卡牛",
+        "挖财", "融360", "借贷宝", "信用星球", "钱站",
+        "好期贷", "包银消费", "盛银消费", "晋商消费", "蒙商消费",
+        "哈银消费", "尚诚消费", "唯品富邦", "字节放心借", "小赢卡贷"
+    ];
+
+    const DEFAULT_STATE = {
+        appName: "借贷详情", 
+        principal: 2000.00,  
+        days: 50,            
+        fee: 500.00,         
+        dailyRate: 0.001,    
+        lateFeeRate: 0.05,   
+        name: "许泽槟",        
+        idcard: "34010419900101123X",
+        statusText: "【严重警告】您的逾期案件已移交第三方法务机构，即将启动司法程序。",
+        nameMaskMode: 'surname',
+        idMaskMode: 'standard'
+    };
+
+    let LOAN_STATE = { ...DEFAULT_STATE };
+
+    // 🚀 初始化
+    init();
+
+    // 开屏弹窗逻辑
+    setTimeout(() => {
+        if(!document.body.classList.contains('editing-active')) {
+            const el = document.getElementById('startAlert');
+            el.style.display = 'flex';
+            setTimeout(() => el.classList.add('visible'), 50);
+        }
+    }, 500);
+
+    function closeStartAlert() {
+        const el = document.getElementById('startAlert');
+        el.classList.remove('visible');
+        setTimeout(() => el.style.display = 'none', 300);
+    }
+
+    // 复制功能
+    function copyText(el) {
+        if(document.body.classList.contains('editing-active')) return;
+
+        let text = el.innerText.replace('¥', '').replace('+', '').trim();
+        if(navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            });
+        } else {
+            showToast();
+        }
+    }
+
+    function showToast(message = "✅ 已复制到剪贴板") {
+        const t = document.getElementById('toast');
+        t.innerText = message;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 2000);
+    }
+
+    function init() {
+        const saved = localStorage.getItem('MOCK_LOAN_DATA_V9');
+        if (saved) {
+            try {
+                Object.assign(LOAN_STATE, JSON.parse(saved));
+            } catch(e) { console.error('数据读取失败', e); }
+        }
+        updateView();
+    }
+
+    function saveState() {
+        localStorage.setItem('MOCK_LOAN_DATA_V9', JSON.stringify(LOAN_STATE));
+    }
+
+    function resetData() {
+        if(confirm("确定要重置所有数据为默认值吗？")) {
+            LOAN_STATE = { ...DEFAULT_STATE };
+            updateView();
+            closeMenu();
+        }
+    }
+
+    // 姓名脱敏
+    function getMaskedName() {
+        const str = LOAN_STATE.name;
+        const mode = LOAN_STATE.nameMaskMode;
+        if (!str) return "";
+        const len = str.length;
+        if (len < 2) return str;
+        if (mode === 'surname') return "*" + str.substring(1);
+        if (mode === 'middle') {
+            if (len === 2) return str.charAt(0) + "*"; 
+            return str.charAt(0) + "*".repeat(len - 2) + str.charAt(len - 1);
+        }
+        if (mode === 'last') return str.charAt(0) + "*".repeat(len - 1);
+        return "*" + str.substring(1);
+    }
+
+    // 身份证脱敏
+    function getMaskedId() {
+        const str = LOAN_STATE.idcard;
+        const mode = LOAN_STATE.idMaskMode;
+        if (!str || str.length < 10) return str;
+        if (mode === 'standard') return str.substring(0, 2) + "*".repeat(str.length - 4) + str.substring(str.length - 2);
+        if (mode === 'birthday') {
+            if(str.length !== 18) return str;
+            return str.substring(0, 6) + "********" + str.substring(14);
+        }
+        if (mode === 'tail') return str.substring(0, str.length - 4) + "****";
+        return str;
+    }
+
+    // 格式化金额
+    function fmtMoney(num, sign = '') {
+        const s = num.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        return `${sign}<span class="currency-symbol">¥</span>${s}`;
+    }
+
+    // 核心渲染
+    function updateView() {
+        let lateFee = 0;
+        if (LOAN_STATE.days > 3) {
+            lateFee = LOAN_STATE.principal * LOAN_STATE.lateFeeRate;
+        }
+
+        const compoundAmount = LOAN_STATE.principal * Math.pow((1 + LOAN_STATE.dailyRate), LOAN_STATE.days);
+        const interestOnly = compoundAmount - LOAN_STATE.principal;
+        const totalPenalty = interestOnly + lateFee;
+        const total = LOAN_STATE.principal + totalPenalty + LOAN_STATE.fee;
+
+        document.querySelector('[data-model="appName"]').innerText = LOAN_STATE.appName;
+
+        document.getElementById('totalDisplay').innerText = total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('bottomMoney').innerHTML = fmtMoney(total);
+        document.getElementById('principalDisplay').innerHTML = fmtMoney(LOAN_STATE.principal);
+        document.getElementById('interestDisplay').innerHTML = fmtMoney(totalPenalty, '+ ');
+        document.getElementById('feeDisplay').innerHTML = fmtMoney(LOAN_STATE.fee, '+ ');
+        
+        document.getElementById('daysDisplay').innerText = `逾期 ${LOAN_STATE.days} 天`;
+        
+        // 防穿帮逻辑
+        let rateText = "";
+        const isEditing = document.body.classList.contains('editing-active');
+        
+        if (isEditing) {
+            if(LOAN_STATE.dailyRate >= 0.01) rateText = "🔥 高炮模式 (日息1%)";
+            else if(LOAN_STATE.dailyRate >= 0.001) rateText = "复利 + 滞纳金";
+            else rateText = "正常息费";
+        } else {
+            rateText = "按借款协议约定执行";
+        }
+        
+        document.getElementById('rateDisplay').innerText = rateText;
+
+        const header = document.getElementById('headerCard');
+        if (LOAN_STATE.days < 7) {
+            header.style.background = "linear-gradient(135deg, #FF9500 0%, #FFCC00 100%)";
+        } else if (LOAN_STATE.days < 60) {
+            header.style.background = "linear-gradient(135deg, #FF4D4F 0%, #F5222D 100%)";
+        } else {
+            header.style.background = "linear-gradient(135deg, #3a0000 0%, #000000 100%)";
+        }
+
+        const today = new Date();
+        const dueDate = new Date();
+        dueDate.setDate(today.getDate() - LOAN_STATE.days);
+        const dateString = `${dueDate.getFullYear()}-${String(dueDate.getMonth()+1).padStart(2,'0')}-${String(dueDate.getDate()).padStart(2,'0')}`;
+        document.getElementById('dueDateDisplay').innerText = `应还日: ${dateString}`;
+        
+        document.getElementById('statusDisplay').innerText = LOAN_STATE.statusText;
+        
+        document.querySelector('[data-model="name"]').innerText = getMaskedName();
+        document.querySelector('[data-model="idcard"]').innerText = getMaskedId();
+
+        renderTimeline(dueDate);
+        saveState();
+        
+        if (navigator.vibrate) navigator.vibrate(5);
+    }
+
+    // 时间轴
+    function renderTimeline(baseDueDate) {
+        const container = document.getElementById('timelineContainer');
+        const now = new Date();
+        
+        const script = [
+            { offset: 0, title: "借款到期", desc: `应还本金 ¥${LOAN_STATE.principal} 未入账。` },
+            { offset: 3, title: "逾期提醒", desc: "系统发送短信提醒，请尽快处理。" },
+            { offset: 10, title: "违约金产生", desc: "已触发自动扣款协议，开始计算滞纳金。" },
+            { offset: 25, title: "人工催收介入", desc: "多次联系未果，案件升级为人工处理。" },
+            { offset: 40, title: "律师函警告", desc: "已向您的户籍地址寄送正式律师函。" },
+            { offset: 59, title: "准备诉讼材料", desc: "债权方整理证据，提交互联网法院立案。" }
+        ];
+
+        let validEvents = script.filter(ev => ev.offset <= LOAN_STATE.days);
+        if(validEvents.length === 0) validEvents = [script[0]];
+
+        if (LOAN_STATE.days > 60) {
+            validEvents.push({
+                isRealTime: true, 
+                offset: 9999,
+                title: "利息持续累计中",
+                desc: "系统正在按日计算复利，请尽快还款以免债务升级。"
+            });
+        }
+
+        validEvents.sort((a, b) => b.offset - a.offset);
+
+        let html = '';
+        validEvents.forEach((ev, index) => {
+            let dateStr = "";
+            if (ev.isRealTime) {
+                dateStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+            } else {
+                const evDate = new Date(baseDueDate);
+                evDate.setDate(baseDueDate.getDate() + ev.offset);
+                dateStr = `${evDate.getFullYear()}-${String(evDate.getMonth()+1).padStart(2,'0')}-${String(evDate.getDate()).padStart(2,'0')} 14:00`;
+            }
+
+            const activeClass = (index === 0) ? 'active' : '';
+            html += `
+            <div class="timeline-item ${activeClass}">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">${dateStr}</div>
+                <div class="timeline-content">${ev.title}</div>
+                <div class="timeline-desc">${ev.desc}</div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    // 交互逻辑
+    document.body.addEventListener('click', function(e) {
+        if (!document.body.classList.contains('editing-active')) return;
+        let target = e.target.closest('.can-edit');
+        if (target) {
+            e.preventDefault(); e.stopPropagation();
+            openInputModal(target);
+        }
+    });
+
+    let currentField = null;
+
+    function openInputModal(el) {
+        currentField = el.getAttribute('data-model');
+        let val = "";
+        
+        const input = document.getElementById('modalInput');
+        const maskContainer = document.getElementById('maskOptions');
+        const appNameList = document.getElementById('appNameOptions');
+        
+        input.style.display = 'block'; 
+        maskContainer.style.display = 'none'; 
+        appNameList.style.display = 'none';
+
+        if (currentField === 'name') val = LOAN_STATE.name;
+        else if (currentField === 'idcard') val = LOAN_STATE.idcard;
+        else if (currentField === 'days') val = LOAN_STATE.days;
+        else if (currentField === 'principal') val = LOAN_STATE.principal;
+        else if (currentField === 'fee') val = LOAN_STATE.fee;
+        else if (currentField === 'appName') {
+            val = LOAN_STATE.appName;
+            input.style.display = 'none';
+            appNameList.style.display = 'grid';
+            renderAppNames();
+        }
+        else val = el.innerText;
+
+        input.value = val;
+        
+        if (currentField === 'name') {
+            maskContainer.style.display = 'flex';
+            const modes = [
+                { id: 'middle', text: '🙈 挡中间' },
+                { id: 'surname', text: '🙈 挡姓氏' },
+                { id: 'last', text: '🙈 挡名字' }
+            ];
+            renderChips(modes, LOAN_STATE.nameMaskMode, (newMode) => {
+                LOAN_STATE.nameMaskMode = newMode;
+                saveState();
+                updateView();
+            });
+        } 
+        else if (currentField === 'idcard') {
+            maskContainer.style.display = 'flex';
+            const modes = [
+                { id: 'standard', text: '🆔 标准首尾' },
+                { id: 'birthday', text: '🎂 隐藏生日' },
+                { id: 'tail', text: '🔢 隐藏后四' }
+            ];
+            renderChips(modes, LOAN_STATE.idMaskMode, (newMode) => {
+                LOAN_STATE.idMaskMode = newMode;
+                saveState();
+                updateView();
+            });
+        }
+
+        if(['days', 'principal', 'fee'].includes(currentField)) {
+            input.setAttribute('type', 'number');
+        } else {
+            input.setAttribute('type', 'text');
+        }
+
+        document.getElementById('inputModal').style.display = 'flex';
+        if(currentField !== 'appName') input.focus();
+    }
+
+    function renderAppNames() {
+        const container = document.getElementById('appNameOptions');
+        container.innerHTML = "";
+        APP_NAMES.forEach(name => {
+            const item = document.createElement('div');
+            item.className = 'app-name-item';
+            if (name === LOAN_STATE.appName) item.classList.add('selected');
+            item.innerText = name;
+            item.onclick = () => {
+                LOAN_STATE.appName = name;
+                saveState();
+                updateView();
+                closeInputModal();
+            };
+            container.appendChild(item);
+        });
+    }
+
+    function renderChips(options, currentMode, onClick) {
+        const container = document.getElementById('maskOptions');
+        container.innerHTML = "";
+        options.forEach(opt => {
+            const chip = document.createElement('div');
+            chip.className = `mask-chip ${currentMode === opt.id ? 'active' : ''}`;
+            chip.innerText = opt.text;
+            chip.onclick = function() {
+                container.querySelectorAll('.mask-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                onClick(opt.id);
+            };
+            container.appendChild(chip);
+        });
+    }
+
+    function saveInput() {
+        if (currentField !== 'appName') {
+            const val = document.getElementById('modalInput').value;
+            if (currentField === 'days') LOAN_STATE.days = parseInt(val) || 0;
+            else if (currentField === 'principal') LOAN_STATE.principal = parseFloat(val) || 0;
+            else if (currentField === 'fee') LOAN_STATE.fee = parseFloat(val) || 0;
+            else if (currentField === 'name') LOAN_STATE.name = val;
+            else if (currentField === 'idcard') LOAN_STATE.idcard = val;
+            else if (currentField === 'statusText') LOAN_STATE.statusText = val;
+            updateView();
+        }
+        closeInputModal();
+    }
+
+    function closeInputModal() {
+        document.getElementById('inputModal').style.display = 'none';
+        currentField = null;
+    }
+
+    function setRate(dailyRate) {
+        LOAN_STATE.dailyRate = dailyRate;
+        if(dailyRate >= 0.01) LOAN_STATE.lateFeeRate = 0.2; 
+        else LOAN_STATE.lateFeeRate = 0.05;
+        updateView();
+        closeRateModal();
+    }
+
+    function toggleEditMode() {
+        closeMenu();
+        document.body.classList.toggle('editing-active');
+        
+        updateView(); 
+        
+        const saveBtn = document.getElementById('saveBtn');
+        if(document.body.classList.contains('editing-active')) {
+            saveBtn.style.display = 'block';
+            alert("已进入上帝模式：\n1. 点击顶部标题可快速切换平台\n2. 点击数据区域可修改数值\n3. 此时显示真实算法名");
+        } else {
+            saveBtn.style.display = 'none';
+        }
+    }
+    
+    function finishEditing() {
+        saveState(); 
+        toggleEditMode(); 
+        showToast("✅ 所有修改已保存");
+    }
+
+    function toggleMenu() {
+        const m = document.getElementById('popupMenu');
+        const o = document.getElementById('menuOverlay');
+        if(m.classList.contains('show')) { m.classList.remove('show'); o.style.display='none'; }
+        else { m.classList.add('show'); o.style.display='block'; }
+    }
+    function closeMenu() {
+        document.getElementById('popupMenu').classList.remove('show');
+        document.getElementById('menuOverlay').style.display='none';
+    }
+    function openInterestModal() { closeMenu(); document.getElementById('rateModal').style.display = 'flex'; }
+    function closeRateModal() { document.getElementById('rateModal').style.display = 'none'; }
+    
+    function fakeAction() {
+        if(document.body.classList.contains('editing-active')) return;
+        alert("系统风控拦截：检测到您的账户存在高风险，无法线上还款。请联系客服获取官方对公账户。");
+    }
+
+    // 实时时钟
+    setInterval(() => {
+        const now = new Date();
+        const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${now.toLocaleTimeString('en-GB')}`;
+        document.getElementById('timeDisplay').innerText = "数据同步于：" + dateStr; 
+    }, 1000);
+</script>
+</body>
+</html>
