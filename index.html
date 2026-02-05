@@ -6,11 +6,15 @@
     <title>案件详情</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="借贷详情">
     <meta name="format-detection" content="telephone=no">
     <meta name="color-scheme" content="light">
     
-    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFMElEQVR4nO2aW2wUVRzGf2d2t7Tb0ouU3iyltBUKKIgKRolRIxqj0UQTH4wPBkM00YgvGg0PGo0PfFKMV4wP4oOJCgqR8iIxAoK0lMulLVCgtJTSbu9z/IdtZ2ZnZ3a72532hP/NZnZmz5z5zbd/5zIGwzAMwzAMwzAMY1hCqA7o7+9/0jCM5416vdkwjK2u62406vU6o76+3qivr/+21vP09fWtcl33Ldd1O416fa1RrzcY9Xp9rVFf31irOYYEwLbt1a7rvuO67nKjXl9l1OsNRn19vVFfX7ek8wwJgG3b61zXfcd13aVGvb7aqNcbjPr6eqO+vu6czjEkALZtP+C67o9Gvb7KqNcbjPr6eqO+vv6szjEkALZtP+667o9Gvb7aqNcbjPr6eqO+vv6MzjEkALZtr3dd913XdZcb9fpqo15vMOrr6436+rqzOseQANi2/aTruj8a9fpqo15vMOrr6436+vqzOseQANi2vdF13V+Men2VUa83GPX19UZ9ff1ZnWNIALq6utY4jvOH4zjLjXq9wai/v9+or683GhoaTuk8QwJgGMa68vLyP4x6vcGor6836u3tNerq6k7rHEMCYBjGcyUlJb8b9XqDUW9vr1F3d7dRX19/SucZEgDDMJ4vKSl516jXG4x6e3uNent7jfr6+lM6z5AAuK67uaSk5E2jXm8w6u3tNerr6zXq6+tP6TxDAuC67p6SkhIAgFFvb69Rb2+v0djYeErnGRIA13X3lJaWvmrU6w1Gvb29Rn19vUZjY+MpnWdIAFzXPVhaWvqKUa83GPX29hr19fUaDQ0Np3SeIQFwXfdQaWnpS0a93mDU29tr1NfXZzQ0NJzSeYYEwHXdw6WlpS8Y9XqDUW9vr1FfX6/R0NBwSucZEgDXdQ+XlZW9YNTrDUZ9fX1GfX29RmNj4ymdZ0gA+vv7XywtLX3eqNcbrK+v16ivr9doaGg4pfMMCUBfX9/L5eXlLxj1eoN1dXUa9fX1Gg0NDad0niEB6Ovr21BWVva8Ua83WF9fr1FfX6/R2Nh4SucZEgDbtl8pKyvbaNTrDdbV1WnU19drNDQ0nNJ5hgTAtu3Xy8rKnjPq9Qbr6uo06uvrNRobG0/pPEMCYNv2G2VlZS8Y9XqD9fX1GvX19RqNjY2ndJ4hAbBt+82ysrIXjHq9wbq6Oo36+nqNhoaGUzrPkADYtv1WWVnZC0a93mBdXZ1GfX29RmNj4ymdZ0gAnD179u2ysrIXjHq9wbq6Oo36+nqNhoaGUzrPkAD09va+U1ZW9oJRrzdYV1enUV9fr9HY2HhK5xkSANu23y0rK3vBqNcbrKur06ivr9doaGg4pfMMCUD3/wD+Q9TrDdbV1WnU19drNDY2ntJ5hgTAtu3Py8rKnjfq9Qbr6uo06uvrNRsaGk7pPEMC4DjOF2VlZS8Y9XqD9fX1GvX19RqNjY2ndJ4hAfB9/4uysrIXjHq9wbq6Oo36+nqNhoaGUzrPkAA4jvNlWVnZC0a93mBdXZ1GfX29RmNj4ymdZ0gAHMf5qqys7AWjXm+wrq5Oo76+XqOhoeGUzjMkAI7jfF1WVvaCUa83WFdXp1FfX6/R2Nh4SucZEgDHcb4pKyt7wajXG6yrq9Oor6/XaGhoOKXzDAmA4zhfl5WVvWDU6w3W1dVp1NfXazQ2Np7SeYYEwHGcb8rKyl4w6vUG6+rqNOrr6zUaGhpO6TxDAuA4zrdlZWUvGPV6g3V1dRr19fUaDQ0Np3SeIQFwHOfbsrKyF4x6vcG6ujqN+vp6jcbGxlM6z5AAOI7znV27dr1g1OsN1tXVadTX12s0NDSc0nmGBOC/jGEYhmEYhmEYhmF8T/EH8u+C1iQJ2OAAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC91BMVEUAAAD///8ArP8Aqf8AqP8Aqv8Aqv8Aqv8Aqv8Aqf8Aqf8Aqf8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8AAAD///8r3pbRAAAAA3RSTlMAf3+f61eFAAAA90lEQVR42u3cQQrCQBBE0X9Ma0c34i08gOeeV/D+Z2gIGZBCujtV16s6H70+5673vM4513u+5/0f+N4P/OAHfvADv/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7//+88w1bCgogBv0/9QAAAABJRU5ErkJggg==">
+    
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAC91BMVEUAAAD///8ArP8Aqf8AqP8Aqv8Aqv8Aqv8Aqv8Aqf8Aqf8Aqf8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8Aqv8AAAD///8r3pbRAAAAA3RSTlMAf3+f61eFAAAA90lEQVR42u3cQQrCQBBE0X9Ma0c34i08gOeeV/D+Z2gIGZBCujtV16s6H70+5673vM4513u+5/0f+N4P/OAHfvADv/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7v/c7//+88w1bCgogBv0/9QAAAABJRU5ErkJggg==">
 
     <style>
         :root {
@@ -432,10 +436,9 @@
 
 <script>
     // ==========================================
-    // 🔥 高利贷精算引擎 V11.0 (部署终极版)
+    // 🔥 高利贷精算引擎 V15.0 (Base64图标内置版)
     // ==========================================
     
-    // 50个预设平台名称库
     const APP_NAMES = [
         "借贷详情", "微粒贷", "蚂蚁借呗", "京东金条", "度小满金融",
         "360借条", "拍拍贷", "分期乐", "马上消费", "招联金融",
@@ -465,10 +468,8 @@
 
     let LOAN_STATE = { ...DEFAULT_STATE };
 
-    // 🚀 初始化
     init();
 
-    // 开屏弹窗逻辑
     setTimeout(() => {
         if(!document.body.classList.contains('editing-active')) {
             const el = document.getElementById('startAlert');
@@ -483,7 +484,6 @@
         setTimeout(() => el.style.display = 'none', 300);
     }
 
-    // 复制功能
     function copyText(el) {
         if(document.body.classList.contains('editing-active')) return;
 
@@ -526,7 +526,6 @@
         }
     }
 
-    // 姓名脱敏
     function getMaskedName() {
         const str = LOAN_STATE.name;
         const mode = LOAN_STATE.nameMaskMode;
@@ -542,7 +541,6 @@
         return "*" + str.substring(1);
     }
 
-    // 身份证脱敏
     function getMaskedId() {
         const str = LOAN_STATE.idcard;
         const mode = LOAN_STATE.idMaskMode;
@@ -556,13 +554,11 @@
         return str;
     }
 
-    // 格式化金额
     function fmtMoney(num, sign = '') {
         const s = num.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
         return `${sign}<span class="currency-symbol">¥</span>${s}`;
     }
 
-    // 核心渲染
     function updateView() {
         let lateFee = 0;
         if (LOAN_STATE.days > 3) {
@@ -584,7 +580,6 @@
         
         document.getElementById('daysDisplay').innerText = `逾期 ${LOAN_STATE.days} 天`;
         
-        // 防穿帮逻辑
         let rateText = "";
         const isEditing = document.body.classList.contains('editing-active');
         
@@ -624,7 +619,6 @@
         if (navigator.vibrate) navigator.vibrate(5);
     }
 
-    // 时间轴
     function renderTimeline(baseDueDate) {
         const container = document.getElementById('timelineContainer');
         const now = new Date();
@@ -675,7 +669,6 @@
         container.innerHTML = html;
     }
 
-    // 交互逻辑
     document.body.addEventListener('click', function(e) {
         if (!document.body.classList.contains('editing-active')) return;
         let target = e.target.closest('.can-edit');
@@ -851,7 +844,6 @@
         alert("系统风控拦截：检测到您的账户存在高风险，无法线上还款。请联系客服获取官方对公账户。");
     }
 
-    // 实时时钟
     setInterval(() => {
         const now = new Date();
         const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${now.toLocaleTimeString('en-GB')}`;
